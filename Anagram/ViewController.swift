@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var anagramLabel: UILabel!
     @IBOutlet weak var anagramTextfield: UITextField!
-    
     @IBOutlet weak var scoreLabel: UILabel!
+    
     let anagramWord = "Supercalifragilisticexpialidocious"
     var score = 0
     var isAnagram = false
@@ -25,14 +25,14 @@ class ViewController: UIViewController {
         anagramLabel.text = getAnagram(anagram: anagramWord)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func checkAnagram(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Anagram!", message: "", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okButton)
+        
         for letter in anagramTextfield.text! {
-            if anagramWord.contains(letter) {
+            if anagramWord.lowercased().contains(letter) {
                 isAnagram = true
             } else {
                 isAnagram = false
@@ -41,10 +41,13 @@ class ViewController: UIViewController {
         print(isAnagram)
         if isAnagram == true {
             score += 1
+            alert.message = "You scored! +1"
         } else {
             score -= 1
+            alert.message = "Not an anagram :( -1"
         }
         
+        present(alert, animated: true)
         scoreLabel.text = "Score: \(score)"
         anagramTextfield.text = ""
     }

@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         anagramLabel.text = getAnagram(anagram: anagramWord)
+        
     }
 
     @IBAction func checkAnagram(_ sender: UIButton) {
@@ -36,9 +36,10 @@ class ViewController: UIViewController {
                 isAnagram = true
             } else {
                 isAnagram = false
+                break
             }
         }
-        print(isAnagram)
+
         if isAnagram == true {
             score += 1
             alert.message = "You scored! +1"

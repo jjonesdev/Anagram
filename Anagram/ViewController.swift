@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         anagramLabel.text = getAnagram(anagram: anagramWord)
         
     }
@@ -47,20 +48,19 @@ class ViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    func checkAnagram() -> Bool {
+    func checkAnagram() {
         for letter in anagramTextfield.text!.lowercased() {
             if anagramWord.lowercased().contains(letter) {
                 isAnagram = true
             } else {
                 isAnagram = false
-                return false
+                return
             }
         }
-        return true
     }
     
     func playerScore() {
-        if checkAnagram() == true {
+        if isAnagram == true {
             score += 1
             answerMessage = "You scored! +1"
         } else {

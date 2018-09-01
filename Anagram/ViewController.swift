@@ -26,45 +26,50 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func checkAnagram(_ sender: UIButton) {
-        
+    @IBAction func checkButton(_ sender: UIButton) {
         
         checkAnagram()
-        
-        if checkAnagram() == true {
-            score += 1
-            alert.message = "You scored! +1"
-        } else {
-            score -= 1
-            alert.message = "Not an anagram :( -1"
-        }
-        
+        playerScore()
         showAlert()
-        scoreLabel.text = "Score: \(score)"
-        anagramTextfield.text = ""
+        
     }
+    
     
     func getAnagram(anagram: String) -> String {
         return anagram
     }
     
     func showAlert() {
-        let alert = UIAlertController(title: "Anagram!", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Anagram Game", message: "", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default)
         alert.addAction(okButton)
+        alert.message = answerMessage
         present(alert, animated: true)
     }
     
     func checkAnagram() -> Bool {
-        for letter in anagramTextfield.text! {
+        for letter in anagramTextfield.text!.lowercased() {
             if anagramWord.lowercased().contains(letter) {
-                return true
+                isAnagram = true
             } else {
+                isAnagram = false
                 return false
-                break
             }
         }
+        return true
+    }
+    
+    func playerScore() {
+        if checkAnagram() == true {
+            score += 1
+            answerMessage = "You scored! +1"
+        } else {
+            score -= 1
+            answerMessage = "Not an anagram :( -1"
+        }
         
+        scoreLabel.text = "Score: \(score)"
+        anagramTextfield.text = ""
     }
 }
 

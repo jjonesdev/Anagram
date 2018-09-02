@@ -31,21 +31,27 @@ class ViewController: UIViewController {
         
         checkAnagram()
         playerScore()
-        showAlert()
+        showScoreAlert()
         
     }
-    
     
     func getAnagram(anagram: String) -> String {
         return anagram
     }
     
-    func showAlert() {
-        let alert = UIAlertController(title: "Anagram Game", message: "", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(okButton)
-        alert.message = answerMessage
-        present(alert, animated: true)
+    func constructAlert(title: String, message: String, style: UIAlertControllerStyle) -> UIAlertController {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        let buttonAction = UIAlertAction(title: "Ok", style: .default)
+        
+        alert.addAction(buttonAction)
+        return alert
+        
+    }
+    
+    func showScoreAlert() {
+        let scoreAlert = constructAlert(title: "Anagram Game", message: answerMessage, style: .alert)
+        present(scoreAlert, animated: true)
     }
     
     func checkAnagram() {

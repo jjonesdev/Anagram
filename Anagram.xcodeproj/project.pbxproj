@@ -12,6 +12,9 @@
 		174482DE21397E3400F7C6D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174482DC21397E3400F7C6D4 /* Main.storyboard */; };
 		174482E021397E3500F7C6D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174482DF21397E3500F7C6D4 /* Assets.xcassets */; };
 		174482E321397E3500F7C6D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174482E121397E3500F7C6D4 /* LaunchScreen.storyboard */; };
+		1744830D213B01C500F7C6D4 /* words_alpha.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1744830C213B01C400F7C6D4 /* words_alpha.txt */; };
+		1744830F213B023100F7C6D4 /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1744830E213B023100F7C6D4 /* Words.swift */; };
+		17448311213B035700F7C6D4 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 17448310213B035700F7C6D4 /* test.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		174482DF21397E3500F7C6D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		174482E221397E3500F7C6D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		174482E421397E3500F7C6D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1744830C213B01C400F7C6D4 /* words_alpha.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words_alpha.txt; sourceTree = "<group>"; };
+		1744830E213B023100F7C6D4 /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		17448310213B035700F7C6D4 /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,13 @@
 			children = (
 				174482D821397E3400F7C6D4 /* AppDelegate.swift */,
 				174482DA21397E3400F7C6D4 /* ViewController.swift */,
+				1744830E213B023100F7C6D4 /* Words.swift */,
 				174482DC21397E3400F7C6D4 /* Main.storyboard */,
 				174482DF21397E3500F7C6D4 /* Assets.xcassets */,
 				174482E121397E3500F7C6D4 /* LaunchScreen.storyboard */,
 				174482E421397E3500F7C6D4 /* Info.plist */,
+				17448310213B035700F7C6D4 /* test.txt */,
+				1744830C213B01C400F7C6D4 /* words_alpha.txt */,
 			);
 			path = Anagram;
 			sourceTree = "<group>";
@@ -123,8 +132,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				174482E321397E3500F7C6D4 /* LaunchScreen.storyboard in Resources */,
+				1744830D213B01C500F7C6D4 /* words_alpha.txt in Resources */,
 				174482E021397E3500F7C6D4 /* Assets.xcassets in Resources */,
 				174482DE21397E3400F7C6D4 /* Main.storyboard in Resources */,
+				17448311213B035700F7C6D4 /* test.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1744830F213B023100F7C6D4 /* Words.swift in Sources */,
 				174482DB21397E3400F7C6D4 /* ViewController.swift in Sources */,
 				174482D921397E3400F7C6D4 /* AppDelegate.swift in Sources */,
 			);

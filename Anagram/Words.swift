@@ -10,21 +10,21 @@ import Foundation
 
 class Words {
     
-    var tempWords = [String]()
+    var wordsArr = [String]()
     var allWords = [String: Int]()
+    var dictionaryNumber = 1
     
     func loadWords() {
         let path = Bundle.main.path(forResource: "test", ofType: "txt")
         let wordString = try! String(contentsOfFile: path!)
-        let tempWords = wordString.components(separatedBy: "/n")
+        let tempWords = wordString.components(separatedBy: "\n")
         
         for word in tempWords {
-            
-            allWords = [word : 1]
+            allWords = [word : dictionaryNumber]
+            dictionaryNumber += 1
         }
         
         print(allWords)
-        
     }
 }
 

@@ -20,7 +20,7 @@ class Words {
         let tempWords = wordString.components(separatedBy: "\n")
         
         for word in tempWords {
-            allWords = [word : dictionaryNumber]
+            allWords[word] = dictionaryNumber
             dictionaryNumber += 1
         }
         

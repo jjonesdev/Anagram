@@ -42,15 +42,22 @@ class ViewController: UIViewController {
     func constructAlert(title: String, message: String, style: UIAlertControllerStyle) -> UIAlertController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        let buttonAction = UIAlertAction(title: "Ok", style: .default)
         
-        alert.addAction(buttonAction)
         return alert
         
     }
     
+    func constructAlertAction(title: String, style: UIAlertActionStyle) -> UIAlertAction {
+        
+        let buttonAction = UIAlertAction(title: title, style: style)
+        
+        return buttonAction
+    }
+    
     func showScoreAlert() {
         let scoreAlert = constructAlert(title: "Anagram Game", message: answerMessage, style: .alert)
+        
+        scoreAlert.addAction(constructAlertAction(title: "Ok", style: .default))
         present(scoreAlert, animated: true)
     }
     

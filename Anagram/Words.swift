@@ -10,14 +10,14 @@ import Foundation
 
 class Words {
     
-    let wordFile = String(contentsOfFile: "test")
-    let words : [String] = text.componentsSeparatedByString("\n")
-    
-    print(words)
-    
-    init(wordFile: String, words: [String]) {
-        self.wordFile = wordFile
-        self.words = words
-    }
+//    let wordFile = String(contentsOfFile: "test")
+//    let words : [String] = text.componentsSeparatedByString("\n")
+//
+//    print(words)
+//
+//    init(wordFile: String, words: [String]) {
+//        self.wordFile = wordFile
+//        self.words = words
+//    }
 }
 

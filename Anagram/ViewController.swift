@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var anagramLabel: UILabel!
@@ -61,9 +62,11 @@ class ViewController: UIViewController {
     }
     
     func checkAnagram() {
-        for letter in anagramTextfield.text!.lowercased() {
-            if anagramWord.lowercased().contains(letter) {
-                isAnagram = true
+        for letter in anagramTextfield.text! {
+            if anagramWord.contains(letter) {
+                if let testWord = Words().hashTable[anagramTextfield.text!] {
+                    isAnagram = true
+                }
             } else {
                 isAnagram = false
                 return

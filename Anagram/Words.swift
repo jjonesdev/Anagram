@@ -10,20 +10,19 @@ import Foundation
 
 class Words {
     
-    var allWords = [String: Int]()
-    var dictionaryNumber = 1
+    var hashTable = HashTable<String, Int>(capacity: 5)
     
     func loadWords() {
+        
         let path = Bundle.main.path(forResource: "words_alpha", ofType: "txt")
         let wordString = try! String(contentsOfFile: path!)
         let tempWords = wordString.components(separatedBy: "\n")
         
         for word in tempWords {
-            allWords[word] = dictionaryNumber
-            dictionaryNumber += 1
+            hashTable[word] = 1
         }
         
-        //print(allWords)
+        print(hashTable)
     }
 }
 

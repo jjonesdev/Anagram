@@ -10,7 +10,7 @@ import Foundation
 
 class Words {
     
-    var hashTable = HashTable<String, Int>(capacity: 5)
+    var hashTable = HashTable<String, Int>(capacity: 370099)
     
     func loadWords() {
         
